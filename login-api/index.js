@@ -1,10 +1,14 @@
-const express = require("express");
-const cors = require("cors");
+import express from "express";
+import cors from "cors";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+app.get("/", (req, res) => {
+    res.send("API is running");
+});
 
 app.post("/login", (req, res) => {
     const { email, password } = req.body;
@@ -18,8 +22,4 @@ app.post("/login", (req, res) => {
 
 app.listen(3000, () => {
     console.log("API起動 http://localhost:3000");
-});
-
-app.get("/",(req,res)=>{
-    res.send("API is running");
 });
