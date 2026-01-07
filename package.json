@@ -1,0 +1,7 @@
+{
+  "name": "login-sample",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix my-login-app\" \"node login-api/index.js\""
+  }
+}
