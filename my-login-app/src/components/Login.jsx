@@ -5,7 +5,8 @@ function Login() {
     const [password, setPassword] = useState("");
 
     const handleLogin = async () => {
-        const response = await fetch("http://localhost:3000/login", {
+        const response = await fetch(
+            import.meta.env.VITE_API_URL + "/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
